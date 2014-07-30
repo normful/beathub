@@ -8,20 +8,23 @@ Downloads freely-available DJ sets from <http://www.livesets.us> and splits them
 
 # Data
 
+- Development database: sqlite3
+- Production database: mysql
+
 ## Entity-Relationship Diagram
 
 ![Entity-relationship diagram](er_diagram.png)
 
 ## Models
 
-`Set` attributes:
+`Set` model's attributes:
 
 - `file_path`
 - `artist`
 - `title`
 - `date_aired`
 
-`Track` attributes:
+`Track` model's attributes:
 
 - `file_path`
 - `artist`
@@ -30,7 +33,28 @@ Downloads freely-available DJ sets from <http://www.livesets.us> and splits them
 
 ## Associations
 
-`Track belongs_to Set`
+One-to-many association between: `Set` and `Track`
+
+# Frameworks and Tools
+
+Server:
+
+- Amazon EC2
+
+Backend downloader:
+
+- http://docs.seattlerb.org/mechanize/
+- http://mp3splt.sourceforge.net/
+
+Backend web app:
+
+- Sinatra
+- 
+- https://github.com/maurimiranda/image_suckr
+
+Frontend:
+
+- http://purecss.io/
 
 # Features
 
@@ -62,15 +86,7 @@ Downloads freely-available DJ sets from <http://www.livesets.us> and splits them
 - As a user, I want to know what my actual friends are listening to.
 - As a user, I want to know when I'm able to see an artist next, up to a year in advance by seeing their tour dates.
 
-# Pages
-
-Create a list of pages. 
-
-For each page, mention:
-- URL structure for the page
-- a sentence or two describing what that page will have on it (a form, a list, details, something else? multiple things?)
-- draw wireframe in detail, including navbar
-- color scheme
+# Page and Wireframes
 
 ## Home Page
 
@@ -82,14 +98,26 @@ Content:
 - large picture or video
 - list of latest sets
 
+Wireframe:
+
+![Home page wireframe](wireframe_1_home_page.jpg)
+
 ## Search Results Page
+
+URL: `/sets?search=SEARCHSTRING` 
 
 Content:
 
 - frozen navbar at top with logo and search box (same on all pages)
 - search results that list sets whose `artist` or `title` attributes contain the search query, or sets that have tracks whose `artist` or `title` attributes contain the search query
 
+Wireframe:
+
+![Search results page wireframe](wireframe_2_search_results_page.jpg)
+
 ## Set Download Page
+
+URL `/set/:id`
 
 Content:
 
@@ -98,11 +126,34 @@ Content:
 - title of set
 - tracklist
 
-# User flow 
+Wireframe:
 
-1. User ...
+![Set download page wireframe](wireframe_3_set_download_page.jpg)
 
-# APIs and links
+# User Flow 
+
+1. User lands on Home Page.
+2. User clicks on a set in the list of latest sets.
+3. User is redirected to the Set Download Page.
+4. User clicks on one or more of the following downloads in the Set Download Page:
+  - Split track
+  - Original unsplit set
+  - Cuesheet
+  - Zip file containing all split tracks for this set
+
+At any point in time, the following user flow can also occur:
+
+5. User submits search via search box in navbar.
+6. User is redirected to the Search Results Page.
+7. User clicks on a set in the list of sets in the search results.
+
+From that point onwards, the user follows Step 3. and 4.
+
+# Task Breakdown and Division of Labour
+
+See Trello board: https://trello.com/logged-out
+
+# Miscellaneous APIs and links
 
 https://github.com/maurimiranda/image_suckr
 Tracklists: http://www.1001tracklists.com
