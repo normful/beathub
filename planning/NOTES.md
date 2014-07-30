@@ -39,17 +39,19 @@ One-to-many association between: `Set` and `Track`
 
 Server:
 
-- Amazon EC2
+- Amazon EC2 running Ubuntu 12.04.4 LTS
 
 Backend downloader:
 
-- http://docs.seattlerb.org/mechanize/
+- https://github.com/sparklemotion/mechanize
 - http://mp3splt.sourceforge.net/
+- https://github.com/jmettraux/rufus-scheduler/
+- https://github.com/moumar/ruby-mp3info
 
 Backend web app:
 
 - Sinatra
-- 
+- Active Record
 - https://github.com/maurimiranda/image_suckr
 
 Frontend:
