@@ -34,25 +34,24 @@ Downloads freely-available DJ sets from <http://www.livesets.us> and splits them
 
 # Features
 
-## User Stories
+## User stories we will implement
 
-### Will implement
-
-TODO: Add acceptance criteria and task breakdown for every single user story.
-
+- As a user, I want to be able to search for DJ sets to download.
+- As a user, I want to be able to search for single tracks to download.
 - As a user, I want to have the option to download the full DJ set.
-- As a user, I want to have the option to download the associated .CUE file.
+- As a user, I want to have the option to download the associated cuesheet file for a DJ set.
 - As a user, I want to have the option to download single tracks split from a DJ set.
-- As a user, I want be see the tracklist of a set.
+- As a user, I want be see the tracklist of a DJ set if a cuesheet file exists.
 - As a user, I want to see pictures of the artist at shows they've previously played at.
 
-### Might implement, time-permitting
+## User stories we might implement, time-permitting
 
+- As a user, I want be see the tracklist of a DJ set retrieved from <http://www.1001tracklists.com> if a cuesheet file doesn't exist.
 - As a user, I want to be able to visit the SoundCloud page of an artist.
 - As a user, I want to be able to visit the official website of an artist.
 - As a user, I want to look up the lyrics for a song I like.
 
-### Won't implement
+## User stories we won't implement
 
 - As a user, I want to be able to log in and out of the app.
 - As a user, I want suggestions for new artists to explore, based on the music I previously listened to.
@@ -75,13 +74,29 @@ For each page, mention:
 
 ## Home Page
 
-TODO: Include photos of hand-sketches.
+URL: `/`
+
+Content:
+
+- frozen navbar at top with logo and search box (same on all pages)
+- large picture or video
+- list of latest sets
 
 ## Search Results Page
 
-TODO: Include photos of hand-sketches.
+Content:
 
-## Set Page
+- frozen navbar at top with logo and search box (same on all pages)
+- search results that list sets whose `artist` or `title` attributes contain the search query, or sets that have tracks whose `artist` or `title` attributes contain the search query
+
+## Set Download Page
+
+Content:
+
+- frozen navbar at top with logo and search box (same on all pages)
+- picture of artist from Google Images
+- title of set
+- tracklist
 
 # User flow 
 
