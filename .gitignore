@@ -32,3 +32,12 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+.env
+.bundle
+/db/*.db
+/db/*.sqlite3
+/db/*.sqlite
+/db/*.sqlite3-journal
+.DS_Store
+public/assets
