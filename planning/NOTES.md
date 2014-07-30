@@ -56,7 +56,7 @@ Backend web app:
 
 Frontend:
 
-- http://purecss.io/
+- http://getbootstrap.com/
 
 # Features
 
@@ -88,7 +88,7 @@ Frontend:
 - As a user, I want to know what my actual friends are listening to.
 - As a user, I want to know when I'm able to see an artist next, up to a year in advance by seeing their tour dates.
 
-# Page and Wireframes
+# Pages and Wireframes
 
 ## Home Page
 
