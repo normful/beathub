@@ -4,19 +4,28 @@ TODO
 
 # App Description
 
-TODO
+Downloads freely-available DJ sets from http://www.livesets.us and splits them using cuesheet files downloaded from http://www.cuenation.com to produce a searchable listing of DJ sets and split individual tracks (split with mp3splt) with download links to both the original DJ set file, the .cue file, and the split individual .mp3 files.
 
 # User Stories
 
 ## Will implement
 
-- As a user, I want to have the option to download the full set.
-- As a user, I want to have the option to download the associated .CUE file.
-- As a user, I want to have the option to download single tracks split from a set.
-- As a user, I want be see the tracklist of a set I download.
-- As a user, I want to see pictures of the artist and shows they've previously played at.
+- As a user, I want to have the option to download the full DJ set.
+  TODO: Add acceptance criteria.
 
-## Might implement
+- As a user, I want to have the option to download the associated .CUE file.
+  TODO: Add acceptance criteria.
+
+- As a user, I want to have the option to download single tracks split from a DJ set.
+  TODO: Add acceptance criteria.
+
+- As a user, I want be see the tracklist of a set.
+  TODO: Add acceptance criteria.
+
+- As a user, I want to see pictures of the artist at shows they've previously played at.
+  TODO: Add acceptance criteria.
+
+## Might implement, time-permitting
 
 - As a user, I want to be able to visit the SoundCloud page of an artist.
 - As a user, I want to be able to visit the official website of an artist.
