@@ -1,22 +1,5 @@
-configure :development do
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
-  set :database, {
-    adapter: "sqlite3",
-    database: "db/db.sqlite3"
-  }
-end
-
-configure :production do
-  ActiveRecord::Base.establish_connection(
-    adapter:  "mysql2",
-    host:     "host",
-    username: "user",
-    password: "password",
-    database: "db"
-  )
-end
-
 configure do
+  ActiveRecord::Base.logger = Logger.new(STDOUT) if Sinatra::Application.development?
   # Load all models from app/models, using autoload instead of require
   # See http://www.rubyinside.com/ruby-techniques-revealed-autoload-1652.html
   Dir[APP_ROOT.join('app', 'models', '*.rb')].each do |model_file|
