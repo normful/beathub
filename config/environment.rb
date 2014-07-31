@@ -3,16 +3,14 @@ require 'bundler/setup'
 
 require 'active_support/all'
 
-# Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
 
-require 'pry'
+require 'pry' if development? or test?
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
-# Sinatra configuration
 configure do
   set :root, APP_ROOT.to_path
   set :server, :puma
