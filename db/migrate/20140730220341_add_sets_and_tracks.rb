@@ -4,10 +4,10 @@ class AddSetsAndTracks < ActiveRecord::Migration
       t.string :artist
       t.string :title
       t.string :filepath
-      t.datetime :date_aired
+      t.date :date_aired
       t.timestamps
     end
-  
+
     create_table :tracks do |t|
       t.belongs_to :set
       t.string :artist
@@ -17,7 +17,4 @@ class AddSetsAndTracks < ActiveRecord::Migration
       t.timestamps
     end
   end
-
 end
-
-   
