@@ -1,0 +1,14 @@
+development: &development
+  adapter: sqlite3
+  database: "db/db.sqlite3"
+
+test:
+  <<: *development
+  database: "db/db.sqlite3"
+
+production:
+  adapter: mysql
+  username: username
+  password: password
+  host: host
+  database: database

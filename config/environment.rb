@@ -3,16 +3,19 @@ require 'bundler/setup'
 
 require 'active_support/all'
 
-# Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'date_validator'
 
-require 'pry'
+configure :development, :test do
+  require 'pry'
+  require 'factory_girl'
+  require 'faker'
+end
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
-# Sinatra configuration
 configure do
   set :root, APP_ROOT.to_path
   set :server, :puma
@@ -28,3 +31,11 @@ require APP_ROOT.join('config', 'database')
 
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
+
+# Require the models
+require_relative '../app/models/set'
+require_relative '../app/models/track'
+
+# Require the factories
+require_relative '../factories/set_factory'
+require_relative '../factories/track_factory'
