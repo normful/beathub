@@ -16,7 +16,7 @@ gem 'date_validator'
 group :development, :test do
   gem 'pry'
   gem 'factory_girl'
-  gem 'ffaker'
+  gem 'faker'
   gem 'shotgun'
   gem 'sqlite3'
 end
