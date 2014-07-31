@@ -106,7 +106,7 @@ Wireframe:
 
 ## Search Results Page
 
-URL: `/sets?search=SEARCHSTRING` 
+URL: `/search`
 
 Content:
 

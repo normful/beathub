@@ -1,4 +1,15 @@
-# Homepage (Root path)
 get '/' do
-  erb :index
+  erb :home
+end
+
+post '/' do
+  redirect '/search'
+end
+
+get '/search' do
+  erb :search
+end
+
+get '/set/:id' do
+  erb :'set/show'
 end
