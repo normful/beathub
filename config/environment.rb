@@ -5,14 +5,12 @@ require 'active_support/all'
 
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'date_validator'
 
 configure :development, :test do
   require 'pry'
   require 'factory_girl'
-  require 'ffaker'
-
-  # Require the factories
-  APP_ROOT.join('app', 'factories', '*.rb').each { |f| require f }
+  require 'faker'
 end
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -33,3 +31,11 @@ require APP_ROOT.join('config', 'database')
 
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
+
+# Require the models
+require_relative '../app/models/set'
+require_relative '../app/models/track'
+
+# Require the factories
+require_relative '../factories/set_factory'
+require_relative '../factories/track_factory'
