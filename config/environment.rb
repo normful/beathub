@@ -6,7 +6,14 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 
-require 'pry' if development? or test?
+configure :development, :test do
+  require 'pry'
+  require 'factory_girl'
+  require 'ffaker'
+
+  # Require the factories
+  APP_ROOT.join('app', 'factories', '*.rb').each { |f| require f }
+end
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
