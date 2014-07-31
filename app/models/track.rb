@@ -1,7 +1,5 @@
 class Track < ActiveRecord::Base
 
-  belongs_to :set
-
   validates :artist, presence: true
   validates :title, presence: true
   validates :filepath, presence: true, uniqueness: true
