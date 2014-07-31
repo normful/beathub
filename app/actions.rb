@@ -13,11 +13,3 @@ end
 get '/set/:id' do
   erb :'set/show'
 end
-
-get '/results' do
-  erb :results
-end
-
-get '/tracklist' do
-  erb :tracklist
-end
