@@ -1,6 +1,6 @@
 # App Name
 
-TODO
+BeatHub.ca
 
 # App Description
 
