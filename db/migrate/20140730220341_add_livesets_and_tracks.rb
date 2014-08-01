@@ -1,6 +1,6 @@
-class AddSetsAndTracks < ActiveRecord::Migration
+class AddLivesetsAndTracks < ActiveRecord::Migration
   def change
-    create_table :sets do |t|
+    create_table :livesets do |t|
       t.string :artist
       t.string :title
       t.string :filepath
@@ -9,7 +9,7 @@ class AddSetsAndTracks < ActiveRecord::Migration
     end
 
     create_table :tracks do |t|
-      t.belongs_to :set
+      t.belongs_to :liveset
       t.string :artist
       t.string :title
       t.string :filepath

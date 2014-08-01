@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :track, class: Music::Track do
+  factory :track do
     artist { Faker::Name.name }
     title { Faker::Commerce.product_name }
-    track_number { rand(1 .. 20) }
-    filepath { "#{artist}\ -\ #{title}.mp3" }
+    track_number { 1 }
+    filepath { "default_path" }
   end
 end

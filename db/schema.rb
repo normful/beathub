@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20140730220341) do
 
-  create_table "sets", force: true do |t|
+  create_table "livesets", force: true do |t|
     t.string   "artist"
     t.string   "title"
     t.string   "filepath"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140730220341) do
   end
 
   create_table "tracks", force: true do |t|
-    t.integer  "set_id"
+    t.integer  "liveset_id"
     t.string   "artist"
     t.string   "title"
     t.string   "filepath"
