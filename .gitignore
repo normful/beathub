@@ -40,3 +40,5 @@ build/
 /db/*.sqlite
 /db/*.sqlite3-journal
 .DS_Store
+
+*.sass-cache/
