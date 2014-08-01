@@ -8,72 +8,98 @@ in your HTML file.
 license: MIT
 author: bootply.com
 */
-
-html,body {
-  height:100%;
-  background:center no-repeat fixed url('/assets/example/bg_suburb.jpg');
-  background-size: cover;
-}
+html, body {
+  height: 100%; }
 
 .icon-bar {
-  background-color:#fff;
-}
+  background-color: white; }
 
 .navbar-brand {
-  font-family: 'Courgette', cursive;
-}
+  font-family: 'Courgette', cursive; }
 
 .navbar-trans {
-  background-color:#279ddd;
-    color:#fff;
-}
+  background-color: #505050;
+  color: white; }
 
-.navbar-trans li>a:hover,.navbar-trans li>a:focus,.navbar-trans li.active {
-  background-color:#38afef;
-}
+.navbar-trans li > a:hover, .navbar-trans li > a:focus, .navbar-trans li.active {
+  background-color: yellow; }
 
-.navbar-trans a{
-    color:#fefefe;
-}
+.navbar-trans a {
+  color: green; }
 
 .navbar-trans .form-control:focus {
   border-color: #eee;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
-}
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6); }
 
-.v-center {
+.home-main-text {
   padding-top: 10%;
   margin-left: auto;
   margin-right: auto;
   font-size: 10em;
   position: absolute;
   margin: 0 auto;
-}
+  font-size: 5em;
+  font-family: 'Courgette', cursive; }
 
 .well {
-  border-color:transparent;
-}
+  border-color: transparent; }
 
-a.list-group-item.active,[class*='-info'] {
+a.list-group-item.active, [class*='-info'] {
   background-color: #168ccc;
-  color:#fff;
-}
+  color: #fff; }
 
-h1.text-center {
-  font-size: 5em;
-  font-family: 'Courgette', cursive;
-}
+.parallax [class*="bg__"] {
+  position: relative;
+  height: 50vh;
+  text-indent: -9999px;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover; }
+  .parallax [class*="bg__"]:nth-child(2n) {
+    box-shadow: inset 0 0 1em #111; }
+.parallax .bg__foo, .parallax .bg__bazz {
+  height: 100vh; }
+.parallax .bg__foo {
+  background-image: url(../assets/armin.jpg); }
+.parallax .bg__bar {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax2.jpg); }
+.parallax .bg__baz {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax3.jpg); }
+.parallax .bg__bazz {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg); }
+.parallax .bg__break {
+  box-shadow: inset 0 0 1em #111;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax1.jpg); }
+.parallax .capture {
+  float: right;
+  width: 200px;
+  padding: 1em;
+  margin: -1.5em 1em 0 0;
+  text-indent: 0;
+  background: rgba(243, 243, 243, 0.75);
+  box-shadow: 0 1px 0.125em #333; }
 
-#section1>div>img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0 auto;
-}
+article .container {
+  width: 600px;
+  margin: 0 auto; }
+article header {
+  position: relative;
+  margin: -5em 0 0 0;
+  padding: 1em;
+  text-align: left;
+  font-size: 2em;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.75); }
+article h1, article h2 {
+  margin: 0 0 0.333em; }
+article section {
+  padding: 3em; }
+  article section.parallax {
+    margin: 0;
+    padding: 0; }
 
-/* div.home-page { */
-/*   width: 100%; */
-/*   background-image:url('https://www.google.com/images/logos/google_logo_41.png'); */
-/*   background-attachment: fixed; */
-/* } */
+.latest-sets {
+  background-color: black;
+  color: white; }
