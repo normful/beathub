@@ -1,0 +1,19 @@
+body { 
+    background: url(../assets/blue-rave.jpg) no-repeat fixed; 
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+div {
+  position: absolute;
+  margin: auto;
+  top: 5;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 900px;
+  height: 400px;
+  background-color: black;
+}
