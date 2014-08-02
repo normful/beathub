@@ -1,8 +1,11 @@
+<h1> All Your Tracks in One Split</h1>
 <h2>Latest sets</h2>
-<% @livesets.each do |liveset| %>
-  <p>
-    <a href="liveset/<%= liveset.id %>">
-      <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %>
-    </a>
-  </p>
-<% end %>
+<div class ="container">
+  <% @livesets.each do |liveset| %>
+    <p>
+      <a href="liveset/<%= liveset.id %>">
+        <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %>
+      </a>
+    </p>
+  <% end %>
+</div>
