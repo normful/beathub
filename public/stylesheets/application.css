@@ -7,13 +7,14 @@ body {
 
 .navbar {
     background-color: #ED4FFF;
+    color: #fff;
     background-image: none;
 }
 
-.navbar-brand {
+.navbar-brand  {
   font-size: 20px;
   font-family: Audiowide;
-  color: #fff;
+  font-color: #fff;
 }
 
 .business-header {
