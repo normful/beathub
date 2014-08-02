@@ -11,10 +11,10 @@ body {
     background-image: none;
 }
 
-.navbar-brand  {
+.navbar-inverse .navbar-brand {
   font-size: 20px;
   font-family: Audiowide;
-  font-color: #fff;
+  color: #000;
 }
 
 .business-header {
@@ -30,6 +30,12 @@ body {
   text-shadow: 0 0 10px #000;
   padding-top:10%;
   font-size:70px;
+}
+
+.heading {
+  font-family: Audiowide;
+  color: #fff;
+  font-size: 30px;
 }
 
 footer {
