@@ -18,14 +18,14 @@ html, body {
   font-family: 'Courgette', cursive; }
 
 .navbar-trans {
-  background-color: #505050;
+  background-color: #4b657d;
   color: white; }
 
 .navbar-trans li > a:hover, .navbar-trans li > a:focus, .navbar-trans li.active {
   background-color: yellow; }
 
 .navbar-trans a {
-  color: green; }
+  color: white; }
 
 .navbar-trans .form-control:focus {
   border-color: #eee;
@@ -62,7 +62,7 @@ a.list-group-item.active, [class*='-info'] {
 .parallax .bg__foo, .parallax .bg__bazz {
   height: 100vh; }
 .parallax .bg__foo {
-  background-image: url(../assets/armin.jpg); }
+  background-image: url(../assets/purple-rave.jpg); }
 .parallax .bg__bar {
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/30354/parallax2.jpg); }
 .parallax .bg__baz {
@@ -85,21 +85,16 @@ article .container {
   width: 600px;
   margin: 0 auto; }
 article header {
+  font-family: 'Courgette', cursive;
   position: relative;
   margin: -5em 0 0 0;
   padding: 1em;
   text-align: left;
   font-size: 2em;
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.75); }
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1); }
 article h1, article h2 {
   margin: 0 0 0.333em; }
-article section {
-  padding: 3em; }
-  article section.parallax {
-    margin: 0;
-    padding: 0; }
 
 .latest-sets {
-  background-color: black;
-  color: white; }
+  background-color: black; }
