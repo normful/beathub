@@ -9,7 +9,7 @@ post '/search' do
   erb :search
 end
 
-get '/set/:id' do
+get '/liveset/:id' do
   @liveset = Liveset.find(params[:id])
-  erb :'set/show'
+  erb :'liveset/show'
 end
