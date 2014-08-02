@@ -6,7 +6,7 @@
 
 <h2>Tracklisting</h2>
 
-<% @liveset.tracks.each do |track| %>
+<% @liveset.tracks.order(track_number: :asc).each do |track| %>
   <p>
     <%= track.track_number %>.
     <a href="<%= track.filepath %>">
