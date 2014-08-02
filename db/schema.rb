@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20140730220341) do
     t.string   "artist"
     t.string   "title"
     t.string   "filepath"
+    t.string   "cuepath"
+    t.string   "zippath"
     t.date     "date_aired"
     t.datetime "created_at"
     t.datetime "updated_at"

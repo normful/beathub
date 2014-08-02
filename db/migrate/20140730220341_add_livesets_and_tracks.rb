@@ -4,6 +4,8 @@ class AddLivesetsAndTracks < ActiveRecord::Migration
       t.string :artist
       t.string :title
       t.string :filepath
+      t.string :cuepath
+      t.string :zippath
       t.date :date_aired
       t.timestamps
     end
