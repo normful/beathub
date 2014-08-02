@@ -34,8 +34,8 @@ require APP_ROOT.join('app', 'actions')
 
 # Require the models
 require_relative '../app/models/track'
-require_relative '../app/models/set'
+require_relative '../app/models/liveset'
 
 # Require the factories
 require_relative '../factories/track_factory'
-require_relative '../factories/set_factory'
+require_relative '../factories/liveset_factory'
