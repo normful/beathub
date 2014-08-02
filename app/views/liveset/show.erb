@@ -1,14 +1,15 @@
-<%= @liveset.artist %>
-<%= @liveset.title %>
-<%= @liveset.filepath %>
-<%= @liveset.cuepath %>
-<%= @liveset.zippath %>
+<h1><%= @liveset.artist %> - <%= @liveset.title %> - <%= @liveset.date_aired %></h1>
 
-Tracklisting
+<a href="<%= @liveset.filepath %>">Download Set</a>
+<a href="<%= @liveset.cuepath %>">Download Cue</a>
+<a href="<%= @liveset.zippath %>">Download Split Zip</a>
+
+<h2>Tracklisting</h2>
 
 <% @liveset.tracks.each do |track| %>
-  <%= track.artist %>
-  <%= track.title %>
-  <%= track.filepath %>
-  <%= track.track_number %>
+  <p>
+    <a href="<%= track.filepath %>">
+      <%= track.track_number %>. <%= track.artist %> - <%= track.title %>
+    </a>
+  </p>
 <% end %>
