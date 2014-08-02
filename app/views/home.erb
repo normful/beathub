@@ -1,1 +1,8 @@
-Fresh start
+<h2>Latest sets</h2>
+<% @livesets.each do |liveset| %>
+  <p>
+    <a href="<%= liveset.id %>">
+      <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %>
+    </a>
+  </p>
+<% end %>

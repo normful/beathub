@@ -1,11 +1,11 @@
 get '/' do
+  @livesets = Liveset.all.order(date_aired: :desc)
   erb :home
-  @livesets = Liveset.all
 end
 
 post '/search' do
   search = params[:query]
-  @livesets = Liveset.where("artist LIKE ? OR title LIKE ?", "%#{search}%","%#{search}%","%#{search}%")
+  @livesets = Liveset.where("artist LIKE ? OR title LIKE ?", "%#{search}%","%#{search}%","%#{search}%").order(date_aired: :desc)
   erb :search
 end
 
