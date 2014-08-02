@@ -1,7 +1,7 @@
 <h2>Latest sets</h2>
 <% @livesets.each do |liveset| %>
   <p>
-    <a href="<%= liveset.id %>">
+    <a href="liveset/<%= liveset.id %>">
       <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %>
     </a>
   </p>
