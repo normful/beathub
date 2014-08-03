@@ -2,9 +2,9 @@ body {
   font-family: Montserrat;
   background-color: black;
   color: #fff;
-  font-size: 20px;
+  font-size: 2em;
   margin-top: 55px;
-  /* 50px is the height of the navbar - change this if the navbarn height changes */ }
+  /* 50px is the height of the navbar - */ }
 
 .navbar {
   background-color: #0C3F95;
@@ -19,14 +19,13 @@ body {
 .carousel-caption {
   font-family: Montserrat;
   color: #fff;
-  text-shadow: 0 0 10px #505050;
+  text-shadow: 0 0 2em #505050;
   padding-top: 10%;
   font-size: 10em; }
 
-.heading {
+h1 h2 h3 {
   font-family: Montserrat;
-  color: #fff;
-  font-size: 30px; }
+  color: #fff; }
 
 footer {
   margin: 50px 0; }

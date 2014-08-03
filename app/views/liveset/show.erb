@@ -18,7 +18,7 @@
   </div>
   <div class="row">
     <div class="col-lg-8 col-sm-8">
-      <h2 class="heading">Tracklisting</h2>
+      <h2>Tracklisting</h2>
       <% @liveset.tracks.order(track_number: :asc).each do |track| %>
         <p>
           <%= track.track_number %>. <a href="<%= track.filepath %>"> <%= track.artist %> - <%= track.title %></a>
@@ -26,7 +26,7 @@
       <% end %>
     </div>
     <div class="col-lg-4 col-sm-4">
-      <h2 class="heading">Artist Info</h2>
+      <h2>Artist Info</h2>
       <address>
         Facebook<br>
         Twitter<br>
