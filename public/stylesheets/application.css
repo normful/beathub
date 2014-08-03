@@ -1,5 +1,6 @@
 body {
   font-family: Montserrat;
+  background-color: black;
   color: #fff;
   font-size: 20px;
   margin-top: 55px;
@@ -11,24 +12,19 @@ body {
   background-image: none; }
 
 .navbar-inverse .navbar-brand {
-  font-size: 20px;
-  font-family: Audiowide;
-  color: #000; }
+  font-family: Courgette;
+  font-size: 1.5em;
+  color: #fff; }
 
-.business-header {
-  height: 500px;
-  background: url(../assets/blue-rave.jpg) center center no-repeat;
-  background-size: cover; }
-
-.tagline {
-  font-family: Audiowide;
+.carousel-caption {
+  font-family: Montserrat;
   color: #fff;
-  text-shadow: 0 0 10px #000;
+  text-shadow: 0 0 10px #505050;
   padding-top: 10%;
-  font-size: 70px; }
+  font-size: 10em; }
 
 .heading {
-  font-family: Audiowide;
+  font-family: Montserrat;
   color: #fff;
   font-size: 30px; }
 
@@ -39,4 +35,4 @@ footer {
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
-  margin: auto; }
+  margin: 1em auto; }
