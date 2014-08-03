@@ -2,35 +2,41 @@ body {
   font-family: Montserrat;
   color: #fff;
   font-size: 20px;
-  margin-top: 55px;
-  /* 50px is the height of the navbar - change this if the navbarn height changes */ }
+  margin-top: 55px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+}
 
 .navbar {
   background-color: #0C3F95;
   color: #fff;
-  background-image: none; }
+  background-image: none;
+}
 
 .navbar-inverse .navbar-brand {
   font-size: 20px;
   font-family: Audiowide;
-  color: #000; }
+  color: #000;
+}
 
 .business-header {
   height: 500px;
   background: url(../assets/blue-rave.jpg) center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .tagline {
   font-family: Audiowide;
   color: #fff;
   text-shadow: 0 0 10px #000;
-  padding-top: 10%;
-  font-size: 70px; }
+  padding-top:10%;
+  font-size:70px;
+}
 
 .heading {
   font-family: Audiowide;
   color: #fff;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 footer {
-  margin: 50px 0; }
+  margin: 50px 0;
+}
