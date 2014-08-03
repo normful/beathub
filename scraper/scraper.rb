@@ -3,7 +3,7 @@ require 'mechanize'
 
 class Scraper
 
-  MUSIC_FOLDER = "./music"
+  MUSIC_FOLDER = "#{Dir.pwd}/music"
 
   def initialize
     @agent = Mechanize.new
@@ -23,7 +23,7 @@ class Scraper
       puts "Downloading #{mp3_filename}"
       mp3_folder = "#{MUSIC_FOLDER}/#{mp3_file.filename.chomp(".mp3")}"
       mp3_file.save "#{mp3_folder}/#{mp3_filename}"
-      puts "Saving in ./#{MUSIC_FOLDER}/#{mp3_folder}/#{mp3_filename}"
+      puts "Saving in #{MUSIC_FOLDER}/#{mp3_folder}/#{mp3_filename}"
       begin
         save_exact_matching_cue(mp3_filename, mp3_folder)
       rescue StandardError => e
@@ -33,15 +33,15 @@ class Scraper
     end
   end
 
-  def save_exact_matching_cue(query, folder)
+  def save_exact_matching_cue(query, mp3_folder)
     @agent.get('http://cuenation.com/?page=search')
     @agent.page.forms[1]["filename"] = query
     @agent.page.forms[1].submit
     cue_link = @agent.page.link_with(href: /^download\.php\?type=cue.*.cue$/)
     cue_file = cue_link.click # downloads the file
     puts "Downloading #{cue_file.filename}"
-    cue_file.save "#{folder}/#{cue_file.filename}"
-    puts "Saving in ./#{MUSIC_FOLDER}/#{folder}/#{cue_file.filename}"
+    cue_file.save "#{mp3_folder}/#{cue_file.filename}"
+    puts "Saving in #{mp3_folder}/#{cue_file.filename}"
   end
 
   def save_best_matching_cue(query, folder)
