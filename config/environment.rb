@@ -7,11 +7,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'date_validator'
 
-configure :development, :test do
-  require 'pry'
-  require 'factory_girl'
-  require 'faker'
-end
+require 'pry'
+require 'factory_girl'
+require 'faker'
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
