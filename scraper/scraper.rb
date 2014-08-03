@@ -15,7 +15,7 @@ class Scraper
 
   def save_mp3s(page_number)
     @agent.get("http://www.livesets.us/?p=#{page_number}")
-    @agent.page.links_with(href: /^.+\.shtml$/, text: /^.+\s-\s.+$/).first(2).each do |link|
+    @agent.page.links_with(href: /^.+\.shtml$/, text: /^.+\s-\s.+$/).each do |link|
       liveset_page = link.click
       mp3_link = liveset_page.link_with(href: /^.*livesets.us\/d\;.*\.mp3$/)
       mp3_file = mp3_link.click
