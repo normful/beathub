@@ -14,11 +14,13 @@ gem 'tux'
 
 gem 'date_validator'
 
+gem 'factory_girl'
+gem 'faker'
+
+gem 'pry'
+gem 'shotgun'
+
 group :development, :test do
-  gem 'pry'
-  gem 'factory_girl'
-  gem 'faker'
-  gem 'shotgun'
   gem 'sqlite3'
 end
 
