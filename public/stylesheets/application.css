@@ -1,19 +1,41 @@
-body { 
-    background: url(../assets/blue-rave.jpg) no-repeat fixed; 
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+body {
+  font-family: Montserrat;
+  color: #fff;
+  font-size: 20px;
+  margin-top: 55px; /* 50px is the height of the navbar - change this if the navbarn height changes */
 }
 
-div {
-  position: absolute;
-  margin: auto;
-  top: 5;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 900px;
-  height: 400px;
-  background-color: black;
+.navbar {
+    background-color: #ED4FFF;
+    color: #fff;
+    background-image: none;
 }
+
+.navbar-brand  {
+  font-size: 20px;
+  font-family: Audiowide;
+  font-color: #fff;
+}
+
+.business-header {
+  height: 500px;
+  background: url(../assets/blue-rave.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+/* adjust the color and text shadow to optimize legibility once you have an image set - you can also change the vertical positioning if desired  */
+.tagline {
+  font-family: Audiowide;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  padding-top:10%;
+  font-size:70px;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+
+
+    

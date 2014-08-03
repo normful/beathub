@@ -14,3 +14,4 @@ get '/liveset/:id/?' do
   @liveset = Liveset.find(params[:id])
   erb :'liveset/show'
 end
+

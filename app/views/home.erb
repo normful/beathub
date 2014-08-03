@@ -1,11 +1,75 @@
-<h1> All Your Tracks in One Split</h1>
-<h2>Latest sets</h2>
-<div class ="container">
-  <% @livesets.each do |liveset| %>
-    <p>
-      <a href="liveset/<%= liveset.id %>">
-        <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %>
-      </a>
-    </p>
-  <% end %>
-</div>
+<body data-pinterest-extension-installed="cr1.3.3" style="
+    background-color:  black;
+">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">BeatHub</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- <li><a href="#about">About</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<div class="business-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- The background image is set in the custom CSS -->
+                    <h1 class="text-center tagline">All Your Tracks in One Split</h1>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-8 col-sm-8">
+                <h2>Latest Sets</h2>
+              <% @livesets.each do |liveset| %>
+              <p>
+                <a href="liveset/<%= liveset.id %>">
+                <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
+              </p>
+                <% end %>
+        </div>
+            <div class="col-lg-4 col-sm-4">
+                <h2>Contact Us</h2>
+                <address>
+                    <strong>Beathub, Inc.</strong>
+                    <br>128 W Hastings St.
+                    <br>Vancouver, BC V6B 1G8
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Phone">P:</abbr>(123) 456-7890
+                    <br>
+                    <abbr title="Email">E:</abbr> <a href="mailto:#">info@beathub.ca</a>
+                </address>
+            </div>
+        </div>
+
+        <hr>
+
+
