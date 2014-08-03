@@ -20,6 +20,7 @@ gem 'pry'
 gem 'shotgun'
 
 gem 'mechanize'
+gem 'image_suckr'
 
 group :development, :test do
   gem 'sqlite3'

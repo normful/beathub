@@ -33,6 +33,7 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.6.9)
+    image_suckr (0.2.0)
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -113,6 +114,7 @@ DEPENDENCIES
   date_validator
   factory_girl
   faker
+  image_suckr
   mechanize
   pg
   pry

@@ -12,6 +12,7 @@ end
 
 get '/liveset/:id/?' do
   @liveset = Liveset.find(params[:id])
+  suckr = ImageSuckr::GoogleSuckr.new
+  @image_url = suckr.get_image_url({"q" => "#{@liveset.artist}"})
   erb :'liveset/show'
 end
-
