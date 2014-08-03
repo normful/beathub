@@ -3,7 +3,7 @@ require 'mechanize'
 
 class Scraper
 
-  MUSIC_FOLDER = "http://54.210.43.214/music"
+  MUSIC_FOLDER = "./music"
 
   def initialize
     @agent = Mechanize.new

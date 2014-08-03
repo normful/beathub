@@ -19,6 +19,8 @@ gem 'faker'
 gem 'pry'
 gem 'shotgun'
 
+gem 'mechanize'
+
 group :development, :test do
   gem 'sqlite3'
 end
