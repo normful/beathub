@@ -6,6 +6,7 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'date_validator'
+require 'image_suckr'
 
 require 'pry'
 require 'factory_girl'
