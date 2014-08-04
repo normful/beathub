@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-sm-8">
       <div class="btn-group">
         <form class="download" action="<%= @liveset.filepath %>">
           <button type="submit" class="btn btn-default">Download Mix</button>
@@ -26,10 +26,6 @@
           </form>
         <% end %>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8 col-sm-8">
       <% unless @tracks.nil? || @tracks.empty? %>
         <h2>Tracklisting</h2>
         <% @tracks.each do |track| %>
@@ -39,7 +35,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col-lg-4 col-sm-4">
+    <div class="col-sm-4">
       <h2>Artist Info</h2>
       <address>
         Website<br>
