@@ -81,10 +81,9 @@ class Seeder
         hash[:title] = mp3.tag2["TIT2"]
         hash[:track_number] = mp3.tag2["TRCK"].to_i
     end
-    track = Track.create(hash)
-    liveset = Liveset.where(filepath: liveset_filepath)
-    liveset.tracks << track
-    track.save!
+    parent_liveset_id = Liveset.find_by(filepath: liveset_filepath).id
+    hash[:liveset_id_workaround] = parent_liveset_id
+    Track.create(hash)
   end
 
 end

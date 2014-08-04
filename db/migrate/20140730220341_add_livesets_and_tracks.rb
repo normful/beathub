@@ -16,6 +16,7 @@ class AddLivesetsAndTracks < ActiveRecord::Migration
       t.string :title
       t.string :filepath
       t.integer :track_number
+      t.integer :liveset_id_workaround
       t.timestamps
     end
   end
