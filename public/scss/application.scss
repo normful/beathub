@@ -19,12 +19,28 @@ body {
   color: #fff;
 }
 
+
+@media (max-width: 300px) {
+    .carousel-caption { font-size: 70%; }
+}
+
+@media (min-width: 500px) {
+    .carousel-caption { font-size: 80%; }
+}
+
+@media (min-width: 700px) {
+    .carousel-caption { font-size: 120%; }
+}
+
+@media (min-width: 1200px) {
+    .carousel-caption { font-size: 250%; }
+}
+
 .carousel-caption {
   font-family: Montserrat;
   color: #fff;
   text-shadow: 3px 3px 6px black;
   padding-top: 10%;
-  font-size: 10em;
 }
 
 .carousel-inner>.item>img {
