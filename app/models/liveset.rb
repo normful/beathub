@@ -11,9 +11,6 @@ class Liveset < ActiveRecord::Base
   validates :filepath,
     presence: true
 
-  validates :date_aired,
-    date: true
-
   # For will_paginate gem
   self.per_page = 10
 end
