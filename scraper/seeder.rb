@@ -54,20 +54,41 @@ class Seeder
     Liveset.create!(hash)
   end
 
-  # def create_track(filepath)
-  #   Mp3Info.open(filepath) do |mp3|
-  #     Track.create(
-  #       artist: mp3.tag2["TPE1"],
-  #       title: mp3.tag2["TIT2"],
-  #       filepath: filepath,
-  #       track_number: mp3.tag2["TRCK"].to_i
-  #     )
-  #     # TODO: Assign Track to Liveset
-  #   end
-  # end
+  def create_tracks(start)
+    Dir.foreach(start) do |x|
+      path = File.join(start, x)
+      if x == "." or x == ".."
+        next
+      elsif File.directory?(path)
+        create_tracks(path)
+      else
+        if x =~ /\.mp3/ && File.dirname(path).split("/").last == "split"
+          create_track(path)
+        end
+      end
+    end
+  end
+
+  def create_track(track_path)
+    hash = {}
+    a = track_path.split("/")
+    set_folder = a[a.size - 3]
+    file = a[a.size - 1]
+    hash[:filepath] = FILESERVER + set_folder + "/split/" + file
+    liveset_filepath = FILESERVER + set_folder + "/" + set_folder + ".mp3"
+    Mp3Info.open(track_path) do |mp3|
+        hash[:artist] = mp3.tag2["TPE1"]
+        hash[:title] = mp3.tag2["TIT2"]
+        hash[:track_number] = mp3.tag2["TRCK"].to_i
+    end
+    track = Track.create(hash)
+    liveset = Liveset.where(filepath: liveset_filepath)
+    track.liveset = liveset
+    track.save
+  end
 
 end
 
 # Must run seeder in project root directory for now
 Seeder.new.create_livesets(Dir.pwd + "/scraper/music/")
-# Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
+Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
