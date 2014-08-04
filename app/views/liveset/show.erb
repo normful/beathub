@@ -17,7 +17,7 @@
         </form>
         <% unless @liveset.zippath.nil? %>
           <form class="download" action="<%= @liveset.zippath %>">
-            <button type="submit" class="btn btn-default">Download Zip With All Tracks</button>
+            <button type="submit" class="btn btn-default">Download All Tracks Zipped</button>
           </form>
         <% end %>
         <% unless @liveset.cuepath.nil? %>
