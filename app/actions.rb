@@ -16,13 +16,13 @@ get '/search' do
 end
 
 get '/liveset/:id/?' do
+  puts "TEST: #{ENV['TWITTER_API_KEY']}"
   twitter_client = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['TWITTER_API_KEY']
     config.consumer_secret = ENV['TWITTER_API_SECRET']
     config.access_token = ENV['TWITTER_ACCESS_TOKEN']
     config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
   end
-  puts "TEST DOTENV: #{ENV['TWITTER_API_KEY']}"
   @liveset = Liveset.find(params[:id])
   @tracks = Track.where(liveset_id_workaround: params[:id].to_i).order(track_number: :asc)
   suckr = ImageSuckr::GoogleSuckr.new
