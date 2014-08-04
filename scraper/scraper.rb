@@ -23,7 +23,7 @@ class Scraper
       puts "Downloading #{mp3_filename}"
       mp3_folder = "#{MUSIC_FOLDER}/#{mp3_file.filename.chomp(".mp3")}"
       mp3_file.save "#{mp3_folder}/#{mp3_filename}"
-      puts "Saving in #{MUSIC_FOLDER}/#{mp3_folder}/#{mp3_filename}"
+      puts "Saving in #{MUSIC_FOLDER}/#{mp3_filename}"
       begin
         save_exact_matching_cue(mp3_filename, mp3_folder)
       rescue StandardError => e
@@ -56,4 +56,4 @@ class Scraper
 
 end
 
-Scraper.new.save_mp3s(1)
+Scraper.new.save_mp3s(4)
