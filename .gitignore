@@ -42,5 +42,5 @@ build/
 .DS_Store
 
 *.sass-cache/
-*music/
-*music-test/
+*.mp3
+*.cue
