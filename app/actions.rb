@@ -29,6 +29,7 @@ get '/liveset/:id/?' do
   @image_url = suckr.get_image_url({
     "q" => "#{@liveset.artist}",
     "imgsz" => "large",
+    "as_filetype" => "jpg",
     "safe" => "active"
   })
   @tweets = twitter_client.search("#{@liveset.artist}", :result_type => "recent").take(5)
