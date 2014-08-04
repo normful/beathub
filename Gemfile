@@ -24,6 +24,8 @@ gem 'will_paginate'
 gem 'image_suckr'
 gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
+gem 'dotenv'
+gem 'ruby-mp3info'
 
 group :development, :test do
   gem 'sqlite3'
