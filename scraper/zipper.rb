@@ -12,7 +12,11 @@ def walk(start)
       if x =~ /\.cue/
         this_folder = File.dirname(path)
         zip_file = "#{x.chomp(".cue")}.zip"
-        zip_folder("#{this_folder}/split/", "#{this_folder}/#{zip_file}")
+        begin
+          zip_folder("#{this_folder}/split/", "#{this_folder}/#{zip_file}")
+        rescue Zip::EntryExistsError
+          puts "#{zip_file} already exists. Skipping."
+        end
       end
     end
   end
@@ -20,9 +24,9 @@ end
 
 def zip_folder(folder, zip)
   Zip::File.open(zip, Zip::File::CREATE) do |zipfile|
-      Dir[File.join(folder, '**', '**')].each do |file|
-        zipfile.add(file.sub(folder, ''), file)
-      end
+    Dir[File.join(folder, '**', '**')].sort.each do |file|
+      zipfile.add(file.sub(folder, ''), file)
+    end
   end
 end
 
