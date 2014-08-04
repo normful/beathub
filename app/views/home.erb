@@ -38,11 +38,12 @@
     <div class="col-lg-8 col-sm-8">
       <h2>Latest Sets</h2>
       <% @livesets.each do |liveset| %>
-      <p>
-        <a href="liveset/<%= liveset.id %>">
-        <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
-      </p>
+        <p>
+          <a href="liveset/<%= liveset.id %>">
+          <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
+        </p>
       <% end %>
+      <%= will_paginate @livesets %>
     </div>
   </div>
 </div>

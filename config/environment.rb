@@ -6,6 +6,9 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'date_validator'
+require 'will_paginate'
+require 'will_paginate/active_record'
+
 require 'image_suckr'
 
 require 'pry'

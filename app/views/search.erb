@@ -6,11 +6,12 @@
           <p>No results found. :( </p>
         <% else %>
           <% @livesets.each do |liveset| %>
-          <p>
-            <a href="liveset/<%= liveset.id %>">
-            <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
-          </p>
+            <p>
+              <a href="liveset/<%= liveset.id %>">
+              <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
+            </p>
           <% end %>
+          <%= will_paginate @livesets %>
         <% end %>
       </p>
     </div>

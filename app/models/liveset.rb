@@ -21,4 +21,6 @@ class Liveset < ActiveRecord::Base
   validates :date_aired,
     date: true
 
+  # For will_paginate gem
+  self.per_page = 10
 end
