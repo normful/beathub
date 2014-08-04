@@ -1,14 +1,93 @@
-require_relative '../config/environment'
+require 'mp3info'
+require 'dotenv'
 
-300.times do
-  liveset = FactoryGirl.create :liveset
-  1.upto(rand(9 .. 25)).each do |i|
-    track = FactoryGirl.build(:track)
-    a = liveset.filepath.split(/\//)
-    track_folder = "#{a.first(a.size - 1).join("/")}"
-    track.filepath = "#{track_folder}/#{track.artist} - #{track.title}.mp3"
-    track.track_number = i
-    track.save
-    liveset.tracks << track
+class Seeder
+
+  FILESERVER = "http://music.beathub.ca/"
+
+  def initialize
+    # Dotenv.load
+    # ActiveRecord::Base.establish_connection(
+    #   :adapter  => 'postgresql',
+    #   :host     => ENV["PG_HOST"],
+    #   :database => ENV["PG_DATABASE"],
+    #   :username => ENV["PG_USERNAME"],
+    #   :password => ENV["PG_PASSWORD"],
+    #   :encoding => "utf8"
+    # )
   end
+
+  def create_livesets(start)
+    Dir.foreach(start) do |x|
+      path = File.join(start, x)
+      if x == "." or x == ".."
+        next
+      elsif File.directory?(path)
+        create_livesets(path)
+      else
+        if x =~ /\.mp3/ && File.dirname(path).split("/").last != "split"
+          create_liveset(path)
+        end
+      end
+    end
+  end
+
+  def create_liveset(liveset_path)
+    hash = {}
+    a = liveset_path.split("/")
+    folder = a[a.size - 2] + "/"
+    file = a[a.size - 1]
+    hash[:filepath] = FILESERVER + folder + file
+    Mp3Info.open(liveset_path) do |mp3|
+      hash[:artist] = mp3.tag2["TPE1"]
+      hash[:title] = mp3.tag2["TIT2"]
+    end
+    local_cue_path = liveset_path.gsub(/\.mp3$/, ".cue")
+    local_zip_path = liveset_path.gsub(/\.mp3$/, ".zip")
+    if File.file?(local_cue_path)
+      hash[:cuepath] = FILESERVER + folder + file.gsub(/\.mp3$/, ".cue")
+    end
+    if File.file?(local_zip_path)
+      hash[:zippath] = FILESERVER + folder + file.gsub(/\.mp3$/, ".zip")
+    end
+    Liveset.create!(hash)
+  end
+
+  def create_tracks(start)
+    Dir.foreach(start) do |x|
+      path = File.join(start, x)
+      if x == "." or x == ".."
+        next
+      elsif File.directory?(path)
+        create_tracks(path)
+      else
+        if x =~ /\.mp3/ && File.dirname(path).split("/").last == "split"
+          create_track(path)
+        end
+      end
+    end
+  end
+
+  def create_track(track_path)
+    hash = {}
+    a = track_path.split("/")
+    set_folder = a[a.size - 3]
+    file = a[a.size - 1]
+    hash[:filepath] = FILESERVER + set_folder + "/split/" + file
+    liveset_filepath = FILESERVER + set_folder + "/" + set_folder + ".mp3"
+    Mp3Info.open(track_path) do |mp3|
+        hash[:artist] = mp3.tag2["TPE1"]
+        hash[:title] = mp3.tag2["TIT2"]
+        hash[:track_number] = mp3.tag2["TRCK"].to_i
+    end
+    track = Track.new(hash)
+    parent_liveset = Liveset.where(filepath: liveset_filepath)
+    track.liveset = parent_liveset
+    track.save!
+  end
+
 end
+
+
+Seeder.new.create_livesets(APP_ROOT.join('scraper', 'music'))
+Seeder.new.create_tracks(APP_ROOT.join('scraper', 'music'))
