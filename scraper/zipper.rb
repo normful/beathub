@@ -23,8 +23,10 @@ def walk(start)
 end
 
 def zip_folder(folder, zip)
+  puts "Creating #{zip}"
   Zip::File.open(zip, Zip::File::CREATE) do |zipfile|
     Dir[File.join(folder, '**', '**')].sort.each do |file|
+      puts "Adding #{file}"
       zipfile.add(file.sub(folder, ''), file)
     end
   end
