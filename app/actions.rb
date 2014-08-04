@@ -8,10 +8,10 @@ end
 get '/search' do
   query = params[:query]
   @livesets = Liveset
-    .where("artist LIKE ? OR title LIKE ?", "%#{query}%","%#{query}%")
+    .where("lower(artist) LIKE lower(?) OR lower(title) LIKE lower(?)", "%#{query}%","%#{query}%")
     .paginate(page: params[:page], per_page: 50)
     .order(date_aired: :desc)
-  # TODO: Also search through tracks that have the search query
+  # TODO: Also search through tracks that have the search query with pagination
   erb :search
 end
 
