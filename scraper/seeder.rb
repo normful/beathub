@@ -39,10 +39,12 @@ class Seeder
     folder = a[a.size - 2] + "/"
     file = a[a.size - 1]
     hash[:filepath] = FILESERVER + folder + file
+
     Mp3Info.open(liveset_path) do |mp3|
       hash[:artist] = mp3.tag2["TPE1"]
       hash[:title] = mp3.tag2["TIT2"]
     end
+
     local_cue_path = liveset_path.gsub(/\.mp3$/, ".cue")
     local_zip_path = liveset_path.gsub(/\.mp3$/, ".zip")
     if File.file?(local_cue_path)
@@ -50,6 +52,14 @@ class Seeder
     end
     if File.file?(local_zip_path)
       hash[:zippath] = FILESERVER + folder + file.gsub(/\.mp3$/, ".zip")
+    end
+
+    date_pattern = /(\d{2})\-(\d{2})\-(\d{4})$/
+    matches = hash[:title].match(date_pattern)
+    if !matches.nil? && matches[1].to_i <= 12 && matches[2].to_i <= 31
+      hash[:date_aired] = Date.new(matches[3].to_i, matches[1].to_i, matches[2].to_i)
+    elsif !matches.nil? && matches[1].to_i <= 31 && matches[2].to_i <= 12
+      hash[:date_aired] = Date.new(matches[3].to_i, matches[2].to_i, matches[1].to_i)
     end
     Liveset.create!(hash)
   end
@@ -90,4 +100,4 @@ end
 
 # Must run seeder in project root directory for now
 Seeder.new.create_livesets(Dir.pwd + "/scraper/music/")
-Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
+# Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
