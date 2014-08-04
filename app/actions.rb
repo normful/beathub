@@ -16,9 +16,17 @@ get '/search' do
 end
 
 get '/liveset/:id/?' do
+  twitter_client = Twitter::REST::Client.new do |config|
+    config.consumer_key = ENV['TWITTER_API_KEY']
+    config.consumer_secret = ENV['TWITTER_API_SECRET']
+    config.access_token = ENV['TWITTER_ACCESS_TOKEN']
+    config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
+  end
+  puts "TEST DOTENV: #{ENV['TWITTER_API_KEY']}"
   @liveset = Liveset.find(params[:id])
   @tracks = Track.where(liveset_id_workaround: params[:id].to_i).order(track_number: :asc)
   suckr = ImageSuckr::GoogleSuckr.new
   @image_url = suckr.get_image_url({"q" => "#{@liveset.artist}"})
+  @tweets = twitter_client.search("#{liveset.artist}", :result_type => "recent").take(5)
   erb :'liveset/show'
 end

@@ -26,6 +26,7 @@ gem 'rubyzip', '>= 1.0.0'
 gem 'zip-zip'
 gem 'dotenv'
 gem 'ruby-mp3info'
+gem 'twitter'
 
 group :development, :test do
   gem 'sqlite3'
