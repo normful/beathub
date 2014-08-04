@@ -43,3 +43,4 @@ build/
 
 *.sass-cache/
 *music/
+*music-test/
