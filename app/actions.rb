@@ -30,6 +30,7 @@ get '/liveset/:id/?' do
     "q" => "#{@liveset.artist}",
     "imgsz" => "large",
     "as_filetype" => "jpg",
+    "as_sitesearch" => "staticflickr.com",
     "safe" => "active"
   })
   @tweets = twitter_client.search("#{@liveset.artist}", :result_type => "recent").take(5)
