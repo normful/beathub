@@ -8,6 +8,7 @@ class Seeder
 
   def initialize
     Dotenv.load
+    ActiveRecord::Base.clear_connection_cache!
     ActiveRecord::Base.establish_connection(
       :adapter  => 'postgresql',
       :host     => ENV["PG_HOST"],
