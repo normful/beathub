@@ -35,3 +35,10 @@ footer {
   max-height: 100%;
   vertical-align: middle;
   margin: 1em auto; }
+
+.download {
+  display: inline; }
+  .download button {
+    color: #fff;
+    background-color: #0c3f95;
+    border-color: black; }

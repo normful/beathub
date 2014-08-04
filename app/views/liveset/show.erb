@@ -9,10 +9,16 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
-      <div class="well text-center" style="background-color: black;">
-        <a href="<%= @liveset.filepath %>">Download Set</a> -
-        <a href="<%= @liveset.cuepath %>">Download Cue</a> -
-        <a href="<%= @liveset.zippath %>">Download Split Zip</a>
+      <div class="btn-group">
+        <form class="download" action="<%= @liveset.filepath %>">
+          <button type="button" class="btn btn-default">Download Mix</button>
+        </form>
+        <form class="download" action="<%= @liveset.cuepath %>">
+          <button type="button" class="btn btn-default">Download Cuesheet</button>
+        </form>
+        <form class="download" action="<%= @liveset.zippath %>">
+          <button type="button" class="btn btn-default">Download Split Zip</button>
+        </form>
       </div>
     </div>
   </div>
