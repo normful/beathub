@@ -74,6 +74,7 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5)
       ripl (>= 0.3.5)
+    rubyzip (1.1.6)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
@@ -106,6 +107,8 @@ GEM
     unf_ext (0.0.6)
     webrobots (0.1.1)
     will_paginate (3.0.4)
+    zip-zip (0.3)
+      rubyzip (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -121,6 +124,7 @@ DEPENDENCIES
   pry
   puma
   rake
+  rubyzip (>= 1.0.0)
   shotgun
   sinatra
   sinatra-activerecord
@@ -128,3 +132,4 @@ DEPENDENCIES
   sqlite3
   tux
   will_paginate
+  zip-zip

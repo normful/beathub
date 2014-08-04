@@ -22,6 +22,8 @@ gem 'shotgun'
 gem 'mechanize'
 gem 'will_paginate'
 gem 'image_suckr'
+gem 'rubyzip', '>= 1.0.0'
+gem 'zip-zip'
 
 group :development, :test do
   gem 'sqlite3'
