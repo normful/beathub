@@ -9,14 +9,7 @@ class Liveset < ActiveRecord::Base
     presence: true
 
   validates :filepath,
-    uniqueness: true,
     presence: true
-
-  validates :cuepath,
-    uniqueness: true
-
-  validates :zippath,
-    uniqueness: true
 
   validates :date_aired,
     date: true
