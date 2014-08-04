@@ -1,11 +1,8 @@
 class CuesheetChecker
 
-  def initialize
-    @cuesheets = Dir.glob("#{Dir.pwd}/**/*.cue")
-  end
-
-  def check_cuesheets
-    @cuesheets.each do |cuesheet|
+  def check_cuesheets(directory)
+    cuesheets = Dir.glob("#{directory}/**/*.cue")
+    cuesheets.each do |cuesheet|
       cuesheet_file = File.open(cuesheet, "r")
       input_file = cuesheet_file.read
       input_file.encode!('UTF-16', :undef => :replace, :invalid => :replace, :replace => "?")
@@ -20,4 +17,4 @@ class CuesheetChecker
 
 end
 
-CuesheetChecker.new.check_cuesheets
+CuesheetChecker.new.check_cuesheets(Dir.pwd)
