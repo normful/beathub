@@ -1,6 +1,6 @@
 class Track < ActiveRecord::Base
 
-  belongs_to :liveset
+  belongs_to :liveset, inverse_of: :tracks
 
   validates :artist,
     presence: true

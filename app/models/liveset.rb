@@ -1,6 +1,6 @@
 class Liveset < ActiveRecord::Base
 
-  has_many :tracks
+  has_many :tracks, inverse_of: :liveset
 
   validates :artist,
     presence: true
