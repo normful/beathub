@@ -1,6 +1,6 @@
 require_relative '../config/environment'
 
-20.times do
+300.times do
   liveset = FactoryGirl.create :liveset
   1.upto(rand(9 .. 25)).each do |i|
     track = FactoryGirl.build(:track)
