@@ -15,12 +15,16 @@
         <form class="download" action="<%= @liveset.filepath %>">
           <button type="submit" class="btn btn-default">Download Mix</button>
         </form>
-        <form class="download" action="<%= @liveset.cuepath %>">
-          <button type="submit" class="btn btn-default">Download Cuesheet</button>
-        </form>
-        <form class="download" action="<%= @liveset.zippath %>">
-          <button type="submit" class="btn btn-default">Download Split Zip</button>
-        </form>
+        <% unless @liveset.zippath.nil? %>
+          <form class="download" action="<%= @liveset.zippath %>">
+            <button type="submit" class="btn btn-default">Download Zip With All Tracks</button>
+          </form>
+        <% end %>
+        <% unless @liveset.cuepath.nil? %>
+          <form class="download" action="<%= @liveset.cuepath %>">
+            <button type="submit" class="btn btn-default">Download Cuesheet</button>
+          </form>
+        <% end %>
       </div>
     </div>
   </div>
