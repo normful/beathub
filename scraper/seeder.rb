@@ -83,8 +83,8 @@ class Seeder
     end
     track = Track.create(hash)
     liveset = Liveset.where(filepath: liveset_filepath)
-    track.liveset = liveset
-    track.save
+    liveset.tracks << track
+    track.save!
   end
 
 end
