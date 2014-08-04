@@ -47,9 +47,11 @@
         Facebook<br>
         Twitter<br>
       </address>
-      <h2>Latest Tweets</h2>
-      <% @tweets.collect do |tweet| %>
-        <p><%= "#{tweet.user.screen_name}: #{tweet.text}" %><p>
+      <% unless @tweets.nil? || @tweets.empty? %>
+        <h2>Latest Tweets</h2>
+        <% @tweets.collect do |tweet| %>
+          <h5><%= "@#{tweet.user.screen_name}: #{tweet.text}" %></h5>
+        <% end %>
       <% end %>
     </div>
   </div>
