@@ -3,7 +3,7 @@ get '/' do
   erb :home
 end
 
-get '/search/?' do
+post '/search/?' do
   search = params[:query]
   @livesets = Liveset.where("artist LIKE ? OR title LIKE ?", "%#{search}%","%#{search}%").order(date_aired: :desc)
   # TODO: Also search through tracks that have the search query
