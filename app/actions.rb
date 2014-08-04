@@ -27,6 +27,6 @@ get '/liveset/:id/?' do
   @tracks = Track.where(liveset_id_workaround: params[:id].to_i).order(track_number: :asc)
   suckr = ImageSuckr::GoogleSuckr.new
   @image_url = suckr.get_image_url({"q" => "#{@liveset.artist}"})
-  @tweets = twitter_client.search("#{liveset.artist}", :result_type => "recent").take(5)
+  @tweets = twitter_client.search("#{@liveset.artist}", :result_type => "recent").take(5)
   erb :'liveset/show'
 end
