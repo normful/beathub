@@ -43,7 +43,7 @@
           <%= liveset.artist %> - <%= liveset.title %><%= puts " - #{liveset.date_aired.to_s}" unless liveset.date_aired.nil? %></a>
         </p>
       <% end %>
-      <%= will_paginate(@livesets, inner_window: 2) %>
+      <%= will_paginate(@livesets, inner_window: 2, previous_label: "<", next_label: ">") %>
     </div>
   </div>
 </div>
