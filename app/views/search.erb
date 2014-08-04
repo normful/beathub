@@ -8,7 +8,7 @@
           <% @livesets.each do |liveset| %>
             <p>
               <a href="liveset/<%= liveset.id %>">
-              <%= liveset.artist %> - <%= liveset.title %> - <%= liveset.date_aired %></a>
+              <%= liveset.artist %> - <%= liveset.title %><%= puts " - #{liveset.date_aired.to_s}" unless liveset.date_aired.nil? %></a>
             </p>
           <% end %>
           <%= will_paginate @livesets %>

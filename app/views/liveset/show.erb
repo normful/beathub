@@ -4,7 +4,9 @@
       <img class="img-responsive img-rounded" src="<%= @image_url %>" alt=""/>
     </div>
     <div class="col-md-4">
-      <h1><%= @liveset.artist %> - <%= @liveset.title %> - <%= @liveset.date_aired %></h1>
+      <h1>
+        <%= @liveset.artist %> - <%= @liveset.title %><%= puts " - #{@liveset.date_aired.to_s}" unless liveset.date_aired.nil? %>
+      </h1>
     </div>
   </div>
   <div class="row">
