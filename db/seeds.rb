@@ -8,7 +8,7 @@ require_relative '../config/environment'
     track_folder = "#{a.first(a.size - 1).join("/")}"
     track.filepath = "#{track_folder}/#{track.artist} - #{track.title}.mp3"
     track.track_number = i
+    track.liveset_id_workaround = liveset.id
     track.save
-    liveset.tracks << track
   end
 end

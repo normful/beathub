@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140730220341) do
     t.string   "title"
     t.string   "filepath"
     t.integer  "track_number"
+    t.integer  "liveset_id_workaround"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

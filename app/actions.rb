@@ -17,6 +17,7 @@ end
 
 get '/liveset/:id/?' do
   @liveset = Liveset.find(params[:id])
+  @tracks = Track.where(liveset_id_workaround: params[:id].to_i).order(track_number: :asc)
   suckr = ImageSuckr::GoogleSuckr.new
   @image_url = suckr.get_image_url({"q" => "#{@liveset.artist}"})
   erb :'liveset/show'

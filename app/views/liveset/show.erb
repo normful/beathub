@@ -30,9 +30,9 @@
   </div>
   <div class="row">
     <div class="col-lg-8 col-sm-8">
-      <% unless @liveset.tracks.nil? || @liveset.tracks.empty? %>
+      <% unless @tracks.nil? || @tracks.empty? %>
         <h2>Tracklisting</h2>
-        <% @liveset.tracks.order(track_number: :asc).each do |track| %>
+        <% @tracks.each do |track| %>
           <p>
             <%= track.track_number %>. <a href="<%= track.filepath %>"> <%= track.artist %> - <%= track.title %></a>
           </p>
