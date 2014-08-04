@@ -100,4 +100,4 @@ end
 
 # Must run seeder in project root directory for now
 Seeder.new.create_livesets(Dir.pwd + "/scraper/music/")
-# Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
+Seeder.new.create_tracks(Dir.pwd + "/scraper/music/")
