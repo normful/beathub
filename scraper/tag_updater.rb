@@ -1,4 +1,3 @@
-require_relative '../config/environment'
 require 'mp3info'
 
 class TagUpdater
